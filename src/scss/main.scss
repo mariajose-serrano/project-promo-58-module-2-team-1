@@ -1,23 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@use '/sections/variables';
+@use '/sections/reset';
+@use '/sections/header';
+@use '/sections/hero';
+@use '/sections/form';
+@use '/sections/preview';
+@use '/sections/footer';
 
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background-color: #555;
-  color: #fff;
-}
-
-.header {
-  border-bottom: solid 5px darkcyan;
-}
-
-.title {
-  line-height: 4rem;
-  padding-inline: 2rem;
-}
