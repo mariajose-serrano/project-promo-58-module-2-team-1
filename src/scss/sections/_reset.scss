@@ -7,7 +7,7 @@
 body{
   height: 100%; /*Asegura que el body pueda calcular bien alturas relativas.*/
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--main-font);
   color:var(--text);
   background:var(--bg);
   display: flex;  /* display:flex + flex-direction:column: el body apila header → main → footer en columna. */           
