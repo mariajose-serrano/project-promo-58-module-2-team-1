@@ -1,0 +1,14 @@
+.footer-landing{
+  margin-top: auto;            /* el footer se pega al borde inferior cuando la página es corta. */
+  min-height:80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:14px;
+  color:#fff;
+  background-color: var(--bg2);
+}
+
+.footer-icon {
+  margin-left: 3px;
+}

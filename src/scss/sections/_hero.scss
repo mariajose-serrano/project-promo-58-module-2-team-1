@@ -1,0 +1,55 @@
+h1{
+  margin:0;
+  font-size:28px;
+  line-height:1.2;
+  color: var(--accent)
+}
+p{
+  margin:0;
+  line-height:1.5;
+  font-size:18px;
+}
+
+/* FEATURES (3 iconos con FA) */
+.features{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+  padding:14px 30px;
+  margin:48px 0 40px;
+  background:var(--card);
+  border:2px solid var(--border);
+  border-radius:14px;
+}
+.feature-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  font-weight:600;
+  color: var(--text);
+}
+.feature-icon{
+  font-size:40px;         /* tamaño del icono FA */
+  line-height:1;
+  color:var(--accent);     /* color del icono */
+}
+.feature-label{
+  font-size:14px;
+}
+
+/* Botón/enlace */
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  font-weight:700;
+  font-size:18px;
+  color:black;
+  background:var(--btn);
+  border: 1px solid var(--btn-border);
+  border-radius:999px;
+  cursor:pointer;
+  text-decoration:none;
+  margin-top: 32px;
+}
+.btn:hover{ background:var(--btn-hover); }
