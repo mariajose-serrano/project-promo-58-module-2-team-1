@@ -1,13 +1,16 @@
 .preview {
-  width: 50%;
+  flex: 1; /* que use el mismo espacio flexible que el formulario */
   max-width: 600px;
-  height: 100vh;
-  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #dad5e2;
   border-radius: 10px;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+  margin: 2rem;
+  
 }
 
 .reset-btn {
@@ -18,11 +21,11 @@
   font-size: 14px;
   cursor: pointer;
   margin-bottom: 20px;
-  color: #fff;
+  color:var(--text3);
 }
 
 .reset-btn:hover {
-    background-color: var(--text3);
+    background-color: white;
 }
 
 .profile-card {

@@ -1,7 +1,7 @@
 .main__section {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     background-color: #f5f5f5;
     padding: 2rem 0;
     gap: 2rem;
@@ -13,6 +13,7 @@
     width: 50%;
     max-width: 400px;
     padding: 1.5rem;
+     padding: 3rem 1.5rem; 
 }
 
 .design__article {
@@ -99,7 +100,6 @@ input[type="radio"] {
 .profile-form label {
     font-family: var(--secondary-font);
     font-weight: 600;
-    color: #54585a;
     margin-bottom: 0.25rem;
 }
 
@@ -151,11 +151,13 @@ input[type="radio"] {
     color: #54585a;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    color: white;
 
 }
 
 .share__button:hover {
     background-color: var(--btn-hover);
+    color: #54585a;
 }
 
 .share__result {
@@ -215,6 +217,7 @@ input[type="radio"] {
 
 /* Botón personalizado */
 .image-btn {
+    color: white;
     background-color: #9d66d1;
     padding: 0.6rem 1rem;
     border-radius: 6px;
@@ -224,6 +227,7 @@ input[type="radio"] {
 
 .image-btn:hover {
     background-color: var(--btn-hover);
+    color: #54585a;
 }
 
 /* Cuadrado de previsualización */
