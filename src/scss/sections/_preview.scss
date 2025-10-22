@@ -1,12 +1,15 @@
 .preview {
-  width: 40%;
+  width: 50%;
+  max-width: 600px;
+  height: 100vh;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #bfcdd0;
+  background-color: #dad5e2;
   margin-left: 2rem;
   border-radius: 10px;
-  padding: 1rem 0;
+  padding: 5rem;
 }
 
 .reset-btn {
