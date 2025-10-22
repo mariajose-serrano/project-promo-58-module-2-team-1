@@ -1,14 +1,34 @@
-.footer-landing{
-  margin-top: auto;            /* el footer se pega al borde inferior cuando la página es corta. */
-  min-height:80px;
+
+
+.footer-landing {
+  margin-top: auto;
+  min-height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size:14px;
-  color:#fff;
+  font-size: 14px;
+  color: #fff;
   background-color: var(--bg2);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* coloca los elementos uno debajo del otro */
+  align-items: center;
+}
+
+.footer-title {
+  font-weight: 600;
+}
+
+.footer-subtitle {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px; /* separa un poco el texto del corazón */
 }
 
 .footer-icon {
-  margin-left: 3px;
+  color: #e63946; /* color rojo para el corazón */
 }
