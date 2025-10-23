@@ -7,8 +7,16 @@
 }
 
 
+
 /* TABLET */
 @media (min-width: 768px) {
+    .landing .header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    
+  }
   .header {
     display: flex;
     justify-content: flex-start; /* coloca el contenido a la izquierda */
@@ -18,7 +26,7 @@
 
   .top-image {
     margin: 24px 0 8px 0; /* quita el auto centrado */
-    max-width: 300px;     /* puedes reducir un poco si lo prefieres */
+
   }
 }
 
@@ -26,9 +34,9 @@
 @media (min-width: 1024px) {
   .header {
     padding-left: 60px; /* más espacio si tu layout es más ancho */
+    display:flex;
+    align-items: start;
   }
 
-  .top-image {
-    max-width: 340px;
-  }
+
 }

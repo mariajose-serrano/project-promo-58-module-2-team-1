@@ -3,17 +3,17 @@
     justify-content: center;
     align-items: stretch;
     background-color: #f5f5f5;
-    padding: 2rem 0;
-    gap: 2rem;
+    padding: 2rem 2rem;
+    margin: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     font-family: var(--main-font, 'Open Sans', sans-serif);
 }
 
 .editor {
     width: 50%;
-    max-width: 400px;
-    padding: 1.5rem;
      padding: 3rem 1.5rem; 
+     min-width: 400px;
 }
 
 .design__article {
@@ -240,3 +240,12 @@ input[type="radio"] {
     background-size: cover;
     background-position: center;
 }
+
+@media (min-width: 768px) {
+    .editor{
+        min-width: none;
+        width: 60%;
+
+    }
+    
+  }
