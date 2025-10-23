@@ -1,7 +1,7 @@
 /*MOVIL*/
 .header {
     display: flex;
-    justify-content: center; /* coloca el contenido a la izquierda */
+    justify-content: center; 
     align-items: center;
   }
 
@@ -28,22 +28,17 @@
     display: flex;
     justify-content: flex-start; /* coloca el contenido a la izquierda */
     align-items: center;
-    padding-left: 40px; /* ajusta según el margen del formulario */
   }
 
   .top-image {
     margin: 24px 0 8px 0; /* quita el auto centrado */
-
   }
 }
 
 /*DESKTOP */
 @media (min-width: 1024px) {
   .header {
-    padding-left: 60px; /* más espacio si tu layout es más ancho */
     display:flex;
     align-items: start;
   }
-
-
 }
