@@ -1,6 +1,5 @@
 .preview {
   flex: 1; /* que use el mismo espacio flexible que el formulario */
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,3 +78,11 @@
   text-decoration: none;
   font-size: 20px;
 }
+
+@media (min-width: 768px) {
+    .editor{
+        width: 40%;
+
+    }
+    
+  }
