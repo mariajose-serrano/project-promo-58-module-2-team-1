@@ -10,6 +10,7 @@ body{
   font-family: var(--main-font);
   color:var(--text);
   background:var(--bg);
+  background-image: url(/images/background-pattern.png);
   display: flex;  /* display:flex + flex-direction:column: el body apila header → main → footer en columna. */           
   flex-direction: column;    
   min-height: 100svh;     /* hace que el body siempre tenga al menos la altura de la ventana. */
