@@ -119,11 +119,12 @@ input[type="radio"] {
 
 .share__article {
     border-bottom: 1px solid #c7c3c3;
-    margin-bottom: 1rem;
     font-family: var(--secondary-font);
     font-weight: 600;
     color: #54585a;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+   
 
 }
 
@@ -248,4 +249,12 @@ input[type="radio"] {
 
     }
     
+  }
+
+  // CLASES JS 
+
+  .collapsed {
+    display: none;
+
+
   }
