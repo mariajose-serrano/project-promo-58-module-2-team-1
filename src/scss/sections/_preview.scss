@@ -1,5 +1,6 @@
 .preview {
-  flex: 1; /* que use el mismo espacio flexible que el formulario */
+  flex: 1;
+  /* que use el mismo espacio flexible que el formulario */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,6 +50,7 @@
   color: var(--text2);
   font-size: 14px;
 }
+
 .photo-container {
   width: 100%;
   height: 200px;
@@ -56,12 +58,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* evita que se salga la imagen */
+  overflow: hidden;
+  /* evita que se salga la imagen */
 }
+
 .profile-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* recorta sin deformar */
+  object-fit: cover;
+  /* recorta sin deformar */
   display: block;
 }
 
@@ -73,7 +78,7 @@
 }
 
 .icons a {
-  color: var(--text);
+  color: var(--text3);
   text-decoration: none;
   font-size: 20px;
   transition: all 0.3s ease;
@@ -177,4 +182,39 @@
   .editor {
     width: 40%;
   }
+}
+
+/*CLASES JAVA*/
+/* color 1 */
+.profile-card .nombre {
+  color: var(--text);
+}
+
+/* color 2 */
+.profile-card .rol {
+  color: var(--text2);
+}
+
+/* color 3 */
+.profile-card .icons a {
+  color: var(--text3);
+}
+
+/* Paleta 1 (rosa) */
+.profile-card.palette-1 {
+  --text: #f8837c; /* .nombre */
+  --text2: #c3c3c3; /* .rol */
+  --text3: #fcb6a9; /* .icons a */
+}
+/* Paleta 2 (adalab / azul) */
+.profile-card.palette-2 {
+  --text: #209293;
+  --text2: #c3c3c3;
+  --text3: #5bd3c0;
+}
+/* Paleta 3 (morado/lima) */
+.profile-card.palette-3 {
+  --text: #8944e6;
+  --text2: #c3c3c3;
+  --text3: #b4de84;
 }

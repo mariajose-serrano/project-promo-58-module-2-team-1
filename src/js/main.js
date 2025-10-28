@@ -2,7 +2,8 @@
 
 console.log(">> Ready :)");
 
-// QUERY SELECTOR - Flechas y secciones
+// QUERY SELECTOR:
+// hemos llamado al evento flechas
 const arrow1 = document.querySelector(".js_arrow1");
 const arrow2 = document.querySelector(".js_arrow2");
 const arrow3 = document.querySelector(".js_arrow3");
@@ -253,3 +254,27 @@ updatePreview();
 updatePalette();
 
 
+arrow3.addEventListener("click", (ev) => {
+  //hemos ocultado la primera seccion
+  shareArticle.classList.toggle("collapsed");
+});
+
+//2.Preview colores
+
+// Función con condicionales
+function applyPalette(value) {
+  card.classList.remove("palette-1", "palette-2", "palette-3"); // quitamos paletas anteriores
+  if (value === "1") {
+    card.classList.add("palette-1");
+  } else if (value === "2") {
+    card.classList.add("palette-2");
+  } else if (value === "3") {
+    card.classList.add("palette-3");
+  }
+}
+
+paletteRadios.forEach((radio) => {
+  radio.addEventListener("click", function () {
+    applyPalette(this.value); // this.value es '1' | '2' | '3'
+  });
+});
