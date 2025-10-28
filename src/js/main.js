@@ -3,10 +3,10 @@
 console.log(">> Ready :)");
 
 // QUERY SELECTOR:
-// hemos llamado al evento flechas
-const arrow1 = document.querySelector(".js_arrow1");
-const arrow2 = document.querySelector(".js_arrow2");
-const arrow3 = document.querySelector(".js_arrow3");
+// hemos llamado a las secciones
+const designHide = document.querySelector(".js_designHide");
+const fillHide = document.querySelector(".js_fillHide");
+const shareHide = document.querySelector(".js_shareHide");
 
 const colorArticle = document.querySelector(".js_colorArticle");
 const fillArticle = document.querySelector(".js_fillArticle");
@@ -23,12 +23,16 @@ const linkedinInput = document.getElementById("linkedin");
 const githubInput = document.getElementById("github");
 
 // QUERY SELECTOR - Preview
+const card = document.querySelector(".js_cardPreview"); // la tarjeta de preview que va a ir cambiando
 const previewName = document.querySelector(".preview .nombre");
+const paletteRadios = document.querySelectorAll('input[name="palette"]');
 const previewJob = document.querySelector(".preview .rol");
 const previewPhoto = document.querySelector(".preview .profile-img");
 const previewPhone = document.querySelector(".preview .icons a:nth-child(1)");
 const previewEmail = document.querySelector(".preview .icons a:nth-child(2)");
-const previewLinkedin = document.querySelector(".preview .icons a:nth-child(3)");
+const previewLinkedin = document.querySelector(
+  ".preview .icons a:nth-child(3)"
+);
 const previewGithub = document.querySelector(".preview .icons a:nth-child(4)");
 
 // Objeto para almacenar los datos del usuario
@@ -40,7 +44,7 @@ let userData = {
   phone: "",
   linkedin: "",
   github: "",
-  palette: "1"
+  palette: "1",
 };
 
 // Función para actualizar la preview
@@ -108,10 +112,10 @@ function updatePreview() {
 // Función para cambiar la paleta de colores
 function updatePalette() {
   if (!profileCard) return;
-  
+
   // Remover todas las clases de paleta anteriores
   profileCard.classList.remove("palette-1", "palette-2", "palette-3");
-  
+
   // Aplicar la nueva paleta
   profileCard.classList.add(`palette-${userData.palette}`);
 }
@@ -130,23 +134,27 @@ function handlePhotoUpload(event) {
 }
 
 // EVENTOS - Flechas (acordeón)
-if (arrow1 && colorArticle) {
-  arrow1.addEventListener("click", (ev) => {
-    colorArticle.classList.toggle("collapsed");
-  });
-}
+designHide.addEventListener("click", (ev) => {
+  //hemos ocultado la primera seccion
 
-if (arrow2 && fillArticle) {
-  arrow2.addEventListener("click", (ev) => {
-    fillArticle.classList.toggle("collapsed");
-  });
-}
+  shareArticle.classList.add("collapsed");
+  fillArticle.classList.add("collapsed");
+  colorArticle.classList.remove("collapsed");
+});
 
-if (arrow3 && shareArticle) {
-  arrow3.addEventListener("click", (ev) => {
-    shareArticle.classList.toggle("collapsed");
-  });
-}
+fillHide.addEventListener("click", (ev) => {
+  //hemos ocultado la primera seccion
+  colorArticle.classList.add("collapsed");
+  shareArticle.classList.add("collapsed");
+  fillArticle.classList.remove("collapsed");
+});
+
+shareHide.addEventListener("click", (ev) => {
+  //hemos ocultado la primera seccion
+  fillArticle.classList.add("collapsed");
+  colorArticle.classList.add("collapsed");
+  shareArticle.classList.remove("collapsed");
+});
 
 // EVENTOS - Formulario (actualización en tiempo real)
 if (nameInput) {
@@ -214,7 +222,7 @@ function resetForm() {
     phone: "",
     linkedin: "",
     github: "",
-    palette: "1"
+    palette: "1",
   };
 
   // Limpiar los inputs del formulario
@@ -225,7 +233,7 @@ function resetForm() {
   if (phoneInput) phoneInput.value = "";
   if (linkedinInput) linkedinInput.value = "";
   if (githubInput) githubInput.value = "";
-  
+
   // Resetear paleta a 1 (por defecto)
   if (paletteInputs && paletteInputs[0]) {
     paletteInputs[0].checked = true;
@@ -252,12 +260,6 @@ if (resetButton) {
 // Inicializar la preview
 updatePreview();
 updatePalette();
-
-
-arrow3.addEventListener("click", (ev) => {
-  //hemos ocultado la primera seccion
-  shareArticle.classList.toggle("collapsed");
-});
 
 //2.Preview colores
 

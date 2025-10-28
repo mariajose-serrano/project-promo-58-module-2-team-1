@@ -8,6 +8,7 @@
     gap: 1rem;
     flex-wrap: wrap;
     font-family: var(--main-font, 'Open Sans', sans-serif);
+    border-radius: 2%;
 }
 
 .editor {
@@ -253,8 +254,6 @@ input[type="radio"] {
 
   // CLASES JS 
 
-  .collapsed {
+  .collapsed  {
     display: none;
-
-
   }

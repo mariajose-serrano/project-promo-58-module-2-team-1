@@ -38,7 +38,7 @@
   background-color: white;
   padding: 10px;
   text-align: left;
-  border-left: 5px solid black;
+  border-left: 5px solid var(--text);
 }
 
 .nombre {
@@ -117,66 +117,7 @@
   }
 }
 
-/* Paletas de colores */
-.palette-1 .card-header {
-  border-left-color: #e95626;
-}
 
-.palette-1 .photo-container {
-  background-color: #438792;
-}
-
-.palette-1 .nombre {
-  color: #114e4e;
-}
-
-.palette-1 .rol {
-  color: #54585a;
-}
-
-.palette-1 .icons a {
-  color: #e95626;
-}
-
-.palette-2 .card-header {
-  border-left-color: #14d9c4;
-}
-
-.palette-2 .photo-container {
-  background-color: #420101;
-}
-
-.palette-2 .nombre {
-  color: #14d9c4;
-}
-
-.palette-2 .rol {
-  color: #54585a;
-}
-
-.palette-2 .icons a {
-  color: #14d9c4;
-}
-
-.palette-3 .card-header {
-  border-left-color: #e237db;
-}
-
-.palette-3 .photo-container {
-  background-color: #e237db;
-}
-
-.palette-3 .nombre {
-  color: #000000;
-}
-
-.palette-3 .rol {
-  color: #4f4f4f;
-}
-
-.palette-3 .icons a {
-  color: #e237db;
-}
 
 @media (min-width: 768px) {
   .editor {
@@ -197,6 +138,11 @@
 
 /* color 3 */
 .profile-card .icons a {
+  color: var(--text3);
+}
+
+/* color 4 */
+.profile-card .card-header {
   color: var(--text3);
 }
 
