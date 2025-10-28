@@ -9,7 +9,6 @@
   padding: 3rem 1.5rem;
   box-sizing: border-box;
   margin: 2rem;
-  
 }
 
 .reset-btn {
@@ -20,11 +19,11 @@
   font-size: 14px;
   cursor: pointer;
   margin-bottom: 20px;
-  color:var(--text3);
+  color: var(--text3);
 }
 
 .reset-btn:hover {
-    background-color: white;
+  background-color: white;
 }
 
 .profile-card {
@@ -52,7 +51,7 @@
 }
 .photo-container {
   width: 100%;
-  height: 200px; 
+  height: 200px;
   background-color: var(--bg);
   display: flex;
   justify-content: center;
@@ -77,12 +76,105 @@
   color: var(--text);
   text-decoration: none;
   font-size: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  transform: translateY(0);
+  animation: iconSlideIn 0.4s ease-out backwards;
+}
+
+/* Animación de iconos: levantan y cambian color al hover */
+.icons a:hover {
+  transform: translateY(-5px) scale(1.2);
+  filter: brightness(1.2);
+}
+
+.icons a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.icons a:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.icons a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.icons a:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes iconSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paletas de colores */
+.palette-1 .card-header {
+  border-left-color: #e95626;
+}
+
+.palette-1 .photo-container {
+  background-color: #438792;
+}
+
+.palette-1 .nombre {
+  color: #114e4e;
+}
+
+.palette-1 .rol {
+  color: #54585a;
+}
+
+.palette-1 .icons a {
+  color: #e95626;
+}
+
+.palette-2 .card-header {
+  border-left-color: #14d9c4;
+}
+
+.palette-2 .photo-container {
+  background-color: #420101;
+}
+
+.palette-2 .nombre {
+  color: #14d9c4;
+}
+
+.palette-2 .rol {
+  color: #54585a;
+}
+
+.palette-2 .icons a {
+  color: #14d9c4;
+}
+
+.palette-3 .card-header {
+  border-left-color: #e237db;
+}
+
+.palette-3 .photo-container {
+  background-color: #e237db;
+}
+
+.palette-3 .nombre {
+  color: #000000;
+}
+
+.palette-3 .rol {
+  color: #4f4f4f;
+}
+
+.palette-3 .icons a {
+  color: #e237db;
 }
 
 @media (min-width: 768px) {
-    .editor{
-        width: 40%;
-
-    }
-    
+  .editor {
+    width: 40%;
   }
+}
