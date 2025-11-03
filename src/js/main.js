@@ -131,18 +131,6 @@ function updatePalette() {
   card.classList.add(`palette-${userData.palette}`);
 }
 
-// Función con condicionales
-function applyPalette(value) {
-  card.classList.remove("palette-1", "palette-2", "palette-3"); // quitamos paletas anteriores
-  if (value === "1") {
-    card.classList.add("palette-1");
-  } else if (value === "2") {
-    card.classList.add("palette-2");
-  } else if (value === "3") {
-    card.classList.add("palette-3");
-  }
-}
-
 // Función para leer archivos de imagen
 function handlePhotoUpload(event) {
   const file = event.target.files[0];
@@ -274,14 +262,6 @@ paletteInputs.forEach((input) => {
 if (resetButton) {
   resetButton.addEventListener("click", resetForm);
 }
-
-//Preview colores
-
-paletteInputs.forEach((radio) => {
-  radio.addEventListener("click", function () {
-    applyPalette(this.value); // this.value es '1' | '2' | '3'
-  });
-});
 
 // SECCIÓN DE ACCIONES AL CARGAR LA PÁGINA
 // Este código se ejecutará cuando se carga la página
