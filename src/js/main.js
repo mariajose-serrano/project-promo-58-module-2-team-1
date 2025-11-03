@@ -1,9 +1,8 @@
 "use strict";
 
-console.log(">> Ready :)");
+// SECCIÓN DE QUERY-SELECTOR
+// Éstos son los elementos que nos traemos de la página HTML y usamos en el código
 
-// QUERY SELECTOR:
-// hemos llamado a las secciones
 const designHide = document.querySelector(".js_designHide");
 const fillHide = document.querySelector(".js_fillHide");
 const shareHide = document.querySelector(".js_shareHide");
@@ -13,19 +12,19 @@ const fillArticle = document.querySelector(".js_fillArticle");
 const shareArticle = document.querySelector(".js_shareArticle");
 
 // QUERY SELECTOR - Formulario
-const form = document.getElementById("profile-form");
-const nameInput = document.getElementById("name");
-const jobInput = document.getElementById("job");
-const photoInput = document.getElementById("photo");
-const emailInput = document.getElementById("email");
-const phoneInput = document.getElementById("phone");
-const linkedinInput = document.getElementById("linkedin");
-const githubInput = document.getElementById("github");
+const form = document.querySelector(".js_profileForm");
+const nameInput = document.querySelector(".js_nameInput");
+const jobInput = document.querySelector(".js_jobInput");
+const photoInput = document.querySelector(".js_photoInput");
+const emailInput = document.querySelector(".js_emailInput");
+const phoneInput = document.querySelector(".js_phoneInput");
+const linkedinInput = document.querySelector(".js_linkedIn");
+const githubInput = document.querySelector(".js_gitHub");
 
 // QUERY SELECTOR - Preview
 const card = document.querySelector(".js_cardPreview"); // la tarjeta de preview que va a ir cambiando
 const previewName = document.querySelector(".preview .nombre");
-const paletteRadios = document.querySelectorAll('input[name="palette"]');
+const paletteInputs = document.querySelectorAll("input[name='palette']");
 const previewJob = document.querySelector(".preview .rol");
 const previewPhoto = document.querySelector(".preview .profile-img");
 const previewPhone = document.querySelector(".preview .icons a:nth-child(1)");
@@ -34,6 +33,12 @@ const previewLinkedin = document.querySelector(
   ".preview .icons a:nth-child(3)"
 );
 const previewGithub = document.querySelector(".preview .icons a:nth-child(4)");
+
+// QUERY SELECTOR - Botón Reset
+const resetButton = document.querySelector(".js_resetBtn");
+
+// SECCIÓN DE DATOS
+// Aquí van los arrays y las variables que contantan datos de la aplicación
 
 // Objeto para almacenar los datos del usuario
 let userData = {
@@ -46,6 +51,12 @@ let userData = {
   github: "",
   palette: "1",
 };
+
+// SECCIÓN DE FUNCIONES
+// Estos son funciones:
+//   - con código auxiliar
+//   - con código que usaremos en los eventos
+//   - para pintar (render) en la página.
 
 // Función para actualizar la preview
 function updatePreview() {
@@ -111,13 +122,25 @@ function updatePreview() {
 
 // Función para cambiar la paleta de colores
 function updatePalette() {
-  if (!profileCard) return;
+  if (!card) return;
 
   // Remover todas las clases de paleta anteriores
-  profileCard.classList.remove("palette-1", "palette-2", "palette-3");
+  card.classList.remove("palette-1", "palette-2", "palette-3");
 
   // Aplicar la nueva paleta
-  profileCard.classList.add(`palette-${userData.palette}`);
+  card.classList.add(`palette-${userData.palette}`);
+}
+
+// Función con condicionales
+function applyPalette(value) {
+  card.classList.remove("palette-1", "palette-2", "palette-3"); // quitamos paletas anteriores
+  if (value === "1") {
+    card.classList.add("palette-1");
+  } else if (value === "2") {
+    card.classList.add("palette-2");
+  } else if (value === "3") {
+    card.classList.add("palette-3");
+  }
 }
 
 // Función para leer archivos de imagen
@@ -133,7 +156,43 @@ function handlePhotoUpload(event) {
   }
 }
 
-// EVENTOS - Flechas (acordeón)
+// Función para resetear el formulario y la preview
+function resetForm() {
+  userData = {
+    name: "",
+    job: "",
+    photo: "images/tech-girl-profile-photo-example.jpg",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    palette: "1",
+  };
+
+  // Limpiar los inputs del formulario
+  if (nameInput) nameInput.value = "";
+  if (jobInput) jobInput.value = "";
+  if (photoInput) photoInput.value = "";
+  if (emailInput) emailInput.value = "";
+  if (phoneInput) phoneInput.value = "";
+  if (linkedinInput) linkedinInput.value = "";
+  if (githubInput) githubInput.value = "";
+
+  // Resetear paleta a 1 (por defecto)
+  if (paletteInputs && paletteInputs[0]) {
+    paletteInputs[0].checked = true;
+  }
+
+  // Actualizar la preview
+  updatePreview();
+  updatePalette();
+}
+
+// SECCIÓN DE EVENTOS
+// Estos son los eventos a los que reacciona la página
+// Los más comunes son: click (en botones, enlaces), input (en ídem) y submit (en form)
+
+// Flechas (acordeón)
 designHide.addEventListener("click", (ev) => {
   //hemos ocultado la primera seccion
 
@@ -155,8 +214,8 @@ shareHide.addEventListener("click", (ev) => {
   colorArticle.classList.add("collapsed");
   shareArticle.classList.remove("collapsed");
 });
+// Formulario (actualización en tiempo real)
 
-// EVENTOS - Formulario (actualización en tiempo real)
 if (nameInput) {
   nameInput.addEventListener("keyup", (ev) => {
     userData.name = ev.target.value;
@@ -203,48 +262,7 @@ if (githubInput) {
   });
 }
 
-// QUERY SELECTOR - Paletas
-const paletteInputs = document.querySelectorAll("input[name='palette']");
-
-// QUERY SELECTOR - Botón Reset
-const resetButton = document.querySelector(".reset-btn");
-
-// QUERY SELECTOR - Elementos de la tarjeta para cambiar paleta
-const profileCard = document.querySelector(".profile-card");
-
-// Función para resetear el formulario y la preview
-function resetForm() {
-  userData = {
-    name: "",
-    job: "",
-    photo: "images/tech-girl-profile-photo-example.jpg",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    palette: "1",
-  };
-
-  // Limpiar los inputs del formulario
-  if (nameInput) nameInput.value = "";
-  if (jobInput) jobInput.value = "";
-  if (photoInput) photoInput.value = "";
-  if (emailInput) emailInput.value = "";
-  if (phoneInput) phoneInput.value = "";
-  if (linkedinInput) linkedinInput.value = "";
-  if (githubInput) githubInput.value = "";
-
-  // Resetear paleta a 1 (por defecto)
-  if (paletteInputs && paletteInputs[0]) {
-    paletteInputs[0].checked = true;
-  }
-
-  // Actualizar la preview
-  updatePreview();
-  updatePalette();
-}
-
-// EVENTO - Cambio de paleta
+// Cambio de paleta
 paletteInputs.forEach((input) => {
   input.addEventListener("change", (ev) => {
     userData.palette = ev.target.value;
@@ -252,31 +270,24 @@ paletteInputs.forEach((input) => {
   });
 });
 
-// EVENTO - Botón Reset
+// Botón Reset
 if (resetButton) {
   resetButton.addEventListener("click", resetForm);
 }
 
-// Inicializar la preview
-updatePreview();
-updatePalette();
+//Preview colores
 
-//2.Preview colores
-
-// Función con condicionales
-function applyPalette(value) {
-  card.classList.remove("palette-1", "palette-2", "palette-3"); // quitamos paletas anteriores
-  if (value === "1") {
-    card.classList.add("palette-1");
-  } else if (value === "2") {
-    card.classList.add("palette-2");
-  } else if (value === "3") {
-    card.classList.add("palette-3");
-  }
-}
-
-paletteRadios.forEach((radio) => {
+paletteInputs.forEach((radio) => {
   radio.addEventListener("click", function () {
     applyPalette(this.value); // this.value es '1' | '2' | '3'
   });
 });
+
+// SECCIÓN DE ACCIONES AL CARGAR LA PÁGINA
+// Este código se ejecutará cuando se carga la página
+// Lo más común es:
+//   - Pedir datos al servidor
+//   - Pintar (render) elementos en la página
+// Inicializar la preview
+updatePreview();
+updatePalette();
