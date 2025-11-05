@@ -33,9 +33,35 @@ const previewLinkedin = document.querySelector(
   ".preview .icons a:nth-child(3)"
 );
 const previewGithub = document.querySelector(".preview .icons a:nth-child(4)");
+const shareBtn = document.querySelector(".js_shareBtn");
 
 // QUERY SELECTOR - Botón Reset
 const resetButton = document.querySelector(".js_resetBtn");
+const SERVER_URL = "https://dev.adalab.es/api/info/data";
+
+shareBtn.addEventListener("click", (ev) => {
+  ev.preventDefault();
+
+  const objectToSend = {
+    field1: paletteInputs.value,
+    field2: nameInput.value,
+    field3: jobInput.value,
+    field4: phoneInput.value,
+    field5: emailInput.value,
+    field6: linkedinInput.value,
+    field7: githubInput.value,
+    photo: "",
+  };
+
+  console.log(objectToSend);
+
+  fetch(SERVER_URL)
+    .then((res) => res.json())
+    .then((data) => {
+      // tu código aquí
+    })
+    .catch((err) => console.error(err));
+});
 
 // SECCIÓN DE DATOS
 // Aquí van los arrays y las variables que contantan datos de la aplicación

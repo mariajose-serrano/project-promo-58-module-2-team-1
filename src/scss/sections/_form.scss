@@ -119,7 +119,7 @@
     }
 
     .share__article {
-        border-bottom: 1px solid #c7c3c3;
+        
         font-family: var(--secondary-font);
         font-weight: 600;
         color: black;
@@ -163,6 +163,7 @@
     }
 
     .share__result {
+        border-bottom: 1px solid #c7c3c3;
         display: flex;
         flex-direction: column;
         align-items: center;
