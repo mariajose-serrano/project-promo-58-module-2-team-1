@@ -37,30 +37,30 @@ const shareBtn = document.querySelector(".js_shareBtn");
 
 // QUERY SELECTOR - Botón Reset
 const resetButton = document.querySelector(".js_resetBtn");
-const SERVER_URL = "https://dev.adalab.es/api/info/data";
 
 shareBtn.addEventListener("click", (ev) => {
   ev.preventDefault();
 
   const objectToSend = {
-    field1: paletteInputs.value,
+    field1: userData.palette,
     field2: nameInput.value,
     field3: jobInput.value,
     field4: phoneInput.value,
     field5: emailInput.value,
     field6: linkedinInput.value,
     field7: githubInput.value,
-    photo: "",
+    photo: userData.photo,
   };
 
   console.log(objectToSend);
 
-  fetch(SERVER_URL)
+  fetch("https://dev.adalab.es/api/info/data", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(objectToSend),
+  })
     .then((res) => res.json())
-    .then((data) => {
-      // tu código aquí
-    })
-    .catch((err) => console.error(err));
+    .then((dataRespone) => {});
 });
 
 // SECCIÓN DE DATOS
@@ -75,7 +75,7 @@ let userData = {
   phone: "",
   linkedin: "",
   github: "",
-  palette: "1",
+  palette: "",
 };
 
 // SECCIÓN DE FUNCIONES
