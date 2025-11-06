@@ -32,6 +32,10 @@ const previewEmail = document.querySelector(".preview .icons a:nth-child(2)");
 const previewLinkedin = document.querySelector(
   ".preview .icons a:nth-child(3)"
 );
+const shareSuccessBox = document.querySelector(".js_shareSuccessBox");
+const shareLink = document.querySelector(".js_shareLink");
+const shareInTwitterLink = document.querySelector(".js_shareInTwitterLink");
+const shareFailBox = document.querySelector(".js_shareFailBox");
 const previewGithub = document.querySelector(".preview .icons a:nth-child(4)");
 const shareBtn = document.querySelector(".js_shareBtn");
 
@@ -60,7 +64,17 @@ shareBtn.addEventListener("click", (ev) => {
     body: JSON.stringify(objectToSend),
   })
     .then((res) => res.json())
-    .then((dataRespone) => {});
+    .then((dataResponse) => {
+      console.log(dataResponse);
+      if (dataResponse.success === true) {
+        shareSuccessBox.classList.remove("collapsed");
+        shareLink.innerHTML = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
+        shareLink.href = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
+        shareInTwitterLink.href = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
+      } else {
+        shareFailBox.classList.remove("collapsed");
+      }
+    });
 });
 
 // SECCIÓN DE DATOS
