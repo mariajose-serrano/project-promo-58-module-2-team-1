@@ -56,8 +56,6 @@ shareBtn.addEventListener("click", (ev) => {
     photo: userData.photo,
   };
 
-  console.log(objectToSend);
-
   fetch("https://dev.adalab.es/api/info/data", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -65,7 +63,6 @@ shareBtn.addEventListener("click", (ev) => {
   })
     .then((res) => res.json())
     .then((dataResponse) => {
-      console.log(dataResponse);
       if (dataResponse.success === true) {
         shareSuccessBox.classList.remove("collapsed");
         shareLink.innerHTML = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
