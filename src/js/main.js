@@ -72,7 +72,12 @@ shareBtn.addEventListener("click", (ev) => {
         shareLink.href = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
         shareInTwitterLink.href = `https://dev.adalab.es/api/info/${dataResponse.infoID}`;
       } else {
-        shareFailBox.classList.remove("collapsed");
+        shareFailBox.classList.remove("collapsed", "hidden");
+        shareFailBox.classList.add("active");
+        shareFailBox.classList.remove("shake");
+        setTimeout(() => {
+          shareFailBox.classList.add("shake");
+        }, 10);
       }
     });
 });

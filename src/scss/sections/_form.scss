@@ -283,3 +283,53 @@ input[type="radio"] {
 .collapsed {
   display: none;
 }
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.share__fail-box {
+  background-color: #ffe6e6;
+  color: #b30000;
+  border: 1px solid #ff9999;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.share__fail-box.active {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+  visibility: visible;
+  transition: transform 0.1s ease;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px 15px;
+}
+
+.share__fail-box.shake {
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
