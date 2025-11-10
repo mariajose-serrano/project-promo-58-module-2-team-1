@@ -1,5 +1,8 @@
 ## 🧩 Descripción del proyecto
 
+Aplicación web para crear y compartir tarjetas digitales personalizadas.  
+Este proyecto es un **rediseño moderno y funcional** de la versión original, con un enfoque en **usabilidad, diseño accesible y experiencia de usuario**.
+
 **Awesome Profile Cards** permite a las usuarias crear su propia tarjeta digital en pocos pasos:
 
 1. **Diseña** el estilo visual de la tarjeta.
